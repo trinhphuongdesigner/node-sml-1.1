@@ -1,34 +1,27 @@
 const express = require("express");
+const ejs = require("ejs");
+const ejsMate = require("ejs-mate");
+
+const port = 3000;
+
 const app = express();
+app.set("view engine", "ejs");
+app.set("views", "./views");
+
+app.engine("ejs", ejsMate);
+app.use("/public", express.static("./public"));
 
 app.get("/", (req, res) => {
-  res.send(
-    '<div><h1><a href="/category">Go to Category page</a></h1> <h1><a href="/contact">Go to Contact page</a></h1></div>'
-  );
+  res.render("client/index");
 });
-
-app.get("/category", (req, res) => {
-  res.send(
-    '<div><h1><a href="/contact">Back to Contact page</a></h1> <h1><a href="/">Back to Home page</a></h1></div>'
-  );
+app.get("/post", (req, res) => {
+  res.render("client/post");
 });
-
 app.get("/contact", (req, res) => {
-  res.send(
-    '<div><h1><a href="/category">Back to Category page</a></h1> <h1><a href="/">Back to Home page</a></h1></div>'
-  );
+  res.render("client/contact");
+});
+app.get("/about", (req, res) => {
+  res.render("client/about");
 });
 
-app.get("/category/:slug", (req, res) => {
-  let title = req.params.slug;
-  while (title.indexOf("-") !== -1) {
-    title = title.replace("-", " ");
-  }
-  res.send(
-    `<div><h1>Welcome to post ${title}</h1><h1><a href="/category">Back to Category page</a></h1> <h1><a href="/">Back to Home page</a></h1></div>`
-  );
-});
-
-app.listen(3000, () => {
-  "Listen in port";
-});
+app.listen(port);

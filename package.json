@@ -4,11 +4,17 @@
   "description": "nodejs demo project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
-  "author": "",
+  "keywords": [
+    "Noddejs"
+  ],
+  "author": "Phuong_Trinh",
   "license": "MIT",
   "dependencies": {
+    "ejs": "^3.1.6",
+    "ejs-mate": "^3.0.0",
     "express": "^4.17.1"
   }
 }
