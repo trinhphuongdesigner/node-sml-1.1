@@ -1,0 +1,20 @@
+<% layout('client/boilerplate') -%>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <h2 class="post-title text-center"><%= post.title %></h2>
+      <p class="text-right"><%= post.description %></p >
+      %> <%- post.content -%>
+      <p>
+        Placeholder text by
+        <a href="http://spaceipsum.com/"> <%= post.author %> </a>. Photographs
+        by
+        <a href="https://www.flickr.com/photos/nasacommons/">
+          <%= post.photoBy %> 
+        </a
+        >.
+      </p>
+    </div>
+  </div>
+</div>
