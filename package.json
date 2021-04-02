@@ -1,19 +1,15 @@
 {
-  "name": "sml-1.1",
-  "version": "0.0.1",
-  "description": "nodejs demo project",
-  "main": "index.js",
+  "name": "practice-node-01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
-  "keywords": [
-    "Noddejs"
-  ],
-  "author": "Phuong_Trinh",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "ejs": "^3.1.6",
     "ejs-mate": "^3.0.0",
     "express": "^4.17.1"
   }
